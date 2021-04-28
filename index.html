@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ecf3</title>
+</head>
+
+<body>
+    <h1>Listes des employées</h1>
+    <input type="button" value="Generate a table" onclick="generate_table()" style="cursor:pointer">
+    <input type="button" value="+" style="cursor:pointer" onclick="create()">
+    <table style="border: 2px double black;">
+        <tr>
+            <td style="border: 2px solid black;">@mail</td>
+
+            <td style="border: 2px solid black;">id </td>
+
+            <td style="border: 2px solid black;">Emploi</td>
+
+            <td style="border: 2px solid black;">Nom</td>
+
+            <td style="border: 2px solid black;">Prenom</td>
+
+
+        </tr>
+        <tbody id="myTable" style="border: 2px solid black;"></tbody>
+    </table>
+
+
+    <script src="app.js"></script>
+</body>
+
+</html>
