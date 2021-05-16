@@ -2,8 +2,7 @@ let list = document.getElementsByTagName("table")
 var table = document.getElementById("myTable");
 
 let xhr = new XMLHttpRequest()
-var url = "https://6057e432c3f49200173ad08d.mockapi.io/api/v1/employees"
-var url_display = "https://6057e432c3f49200173ad08d.mockapi.io/api/v1/employees/?id="
+var url = "https://6057e432c3f49200173ad08d.mockapi.io/api/v1/employees/"
 
 xhr.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
@@ -59,12 +58,13 @@ function displayId() {
 
     xhr.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
-            var t = Object.keys(data)
+            var t = Object.assign(this.response)
+            var u = Object.keys(t)
             console.log(t);
-            var res = data[0]
-            console.log(res);
 
-            (alert('nom: ' + [res['name']] + '\n' + 'prenom: ' + res['last_name'] + '\n' + 'emploi: ' + res['job_title']))
+            console.log(u);
+
+            (alert('nom: ' + data['name'] + '\n' + 'prenom: ' + data['last_name'] + '\n' + 'emploi: ' + data['job_title']))
 
 
 
@@ -73,7 +73,7 @@ function displayId() {
 
 
     }
-    xhr.open("GET", url_display, true)
+    xhr.open("GET", "https://6057e432c3f49200173ad08d.mockapi.io/api/v1/employees/", true)
     xhr.responseType = 'json'
     xhr.send();
 
